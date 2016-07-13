@@ -24,7 +24,7 @@ footer {
 }
 .loading {
   text-align: center;
-  margin: 10rem 14rem;
+  margin: 8rem 8rem;
   width: 10rem;
   display: inline-block;
 }
@@ -82,6 +82,90 @@ footer {
   100% {
     transform: rotate(360deg);
     transform-origin: bottom;
+  }
+}
+.molecule .atom {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  background-color: #383838;
+  animation: atomic-1 2s infinite;
+}
+.molecule .atom:nth-of-type(2) {
+  animation: atomic-2 2s infinite;
+  animation-delay: 0.15s;
+}
+.molecule .atom:nth-of-type(3) {
+  animation: atomic-3 2s infinite;
+  animation-delay: 0.3s;
+}
+.molecule .atom:nth-of-type(4) {
+  animation: atomic-4 2s infinite;
+  animation-delay: 0.45s;
+}
+.molecule .atom:nth-of-type(5) {
+  animation: atomic-5 2s infinite;
+  animation-delay: 0.6s;
+}
+@keyframes atomic-1 {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  20% {
+    transform: translate(5rem, -4rem);
+  }
+  40%,
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+@keyframes atomic-2 {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  20% {
+    transform: translate(2.5rem, -4rem);
+  }
+  40%,
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+@keyframes atomic-3 {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  20% {
+    transform: translate(0rem, -4rem);
+  }
+  40%,
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+@keyframes atomic-4 {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  20% {
+    transform: translate(-2.5rem, -4rem);
+  }
+  40%,
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+@keyframes atomic-5 {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  20% {
+    transform: translate(-5rem, -4rem);
+  }
+  40%,
+  100% {
+    transform: translate(0rem, 0rem);
   }
 }
 .row {
