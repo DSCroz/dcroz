@@ -1,0 +1,150 @@
+body {
+  background-color: #f2f2f2;
+  font-family: "Helvetica Light", Helvetica, Arial, sans-serif;
+  color: #383838;
+  margin: 0;
+}
+header {
+  padding: 2rem 1rem;
+}
+footer {
+  background-color: #383838;
+  width: 100%;
+  padding: 5rem 0;
+  color: white;
+}
+.copyright,
+.tools {
+  margin: 1rem auto;
+  text-align: center;
+}
+.loaders {
+  text-align: center;
+  margin: 2rem;
+}
+.loading {
+  text-align: center;
+  margin: 10rem 14rem;
+  width: 10rem;
+  display: inline-block;
+}
+.dots .dot {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem .5rem;
+  background-color: #383838;
+  border-radius: 1rem;
+  animation: bounce 1s infinite;
+}
+.dots .dot:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+.dots .dot:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-3rem);
+  }
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+}
+.circles .circle {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+  border: .2rem solid #383838;
+  display: inline-block;
+  position: absolute;
+  animation: swing 1.5s infinite;
+}
+.circles .circle:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+.circles .circle:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+.circles .circle:nth-of-type(4) {
+  animation-delay: 0.45s;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  60%,
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+.row {
+  width: 100%;
+  text-align: center;
+}
+.social {
+  margin: 2rem;
+  position: relative;
+  top: -6.5rem;
+}
+.github,
+.stack,
+.linkedin,
+.vine {
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  background-size: cover;
+  text-decoration: none;
+}
+.github {
+  background-image: url('../images/github.svg');
+}
+.stack {
+  background-image: url('../images/stack.svg');
+}
+.linkedin {
+  background-image: url('../images/linkedin.svg');
+}
+.vine {
+  background-image: url('../images/vine.svg');
+}
+.profile-container {
+  display: inline-block;
+  height: 10rem;
+  width: 10rem;
+  margin: 2rem 4rem;
+  border-radius: 6rem;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: black 0rem 0rem 2rem;
+}
+.profile {
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
+  border-radius: 5rem;
+  background-image: url('../images/big_bird.jpg');
+  background-size: cover;
+  background-position-y: -1rem;
+  box-shadow: black 0rem 0rem .5rem;
+}
+.name {
+  font-size: 3rem;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.under-construction {
+  margin: auto auto 2rem auto;
+  max-width: 50%;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+}
