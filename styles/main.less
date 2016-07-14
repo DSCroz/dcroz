@@ -26,6 +26,10 @@ footer {
     margin: 2rem 8rem 8rem 8rem;
     width: 10rem;
     display: inline-block;
+    vertical-align: bottom;
+    @media (max-width: 920px) {
+        margin: 4rem;
+    }
 }
 .dots {
     .dot {
@@ -62,6 +66,9 @@ footer {
     }
 }
 .circles {
+    @media (max-width: 920px) {
+        margin-top: 0rem;
+    }
     .circle {
         height: 3rem;
         width: 3rem;
@@ -354,6 +361,12 @@ footer {
     margin: 2rem;
     position: relative;
     top: -6.5rem;
+    @media (max-width: 768px) {
+        margin: 1rem;
+    }
+    @media (max-width: 650px) {
+        margin: .5rem;
+    }
 }
 .github, .stack, .linkedin, .vine {
     height: 3rem;
@@ -383,6 +396,12 @@ footer {
     background-color: white;
     padding: 1rem;
     box-shadow: black 0rem 0rem 2rem;
+    @media (max-width: 920px) {
+        margin: 2rem 2rem;
+    }
+    @media (max-width: 650px) {
+        margin: 2rem 1rem;
+    }
 }
 .profile {
     height: 10rem;
@@ -406,4 +425,8 @@ footer {
     font-size: 1.6rem;
     font-weight: 300;
     text-align: center;
+    @media (max-width: 920px) {
+        max-width: 100%;
+        margin: auto 3rem 2rem 3rem;
+    }
 }
