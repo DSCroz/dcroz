@@ -23,7 +23,7 @@ footer {
 }
 .loading {
     text-align: center;
-    margin: 8rem 8rem;
+    margin: 2rem 8rem 8rem 8rem;
     width: 10rem;
     display: inline-block;
 }
@@ -68,18 +68,27 @@ footer {
         border-radius: 3rem;
         border: .2rem solid #383838;
         display: inline-block;
-        position: absolute;
+        position: relative;
+        opacity: .5;
+
+        left: 1.8rem;
+        top: 3.6rem;
 
         animation: swing 1.5s infinite;
 
         &:nth-of-type(2) {
             animation-delay: 0.15s;
+            left: -1.8rem;
         }
         &:nth-of-type(3) {
             animation-delay: 0.3s;
+            left: 1.8rem;
+            top: 0rem;
         }
         &:nth-of-type(4) {
             animation-delay: 0.45s;
+            left: -1.8rem;
+            top: 0rem;
         }
     }
     @keyframes swing {
@@ -93,8 +102,8 @@ footer {
         }
     }
 }
-.molecule {
-    .atom {
+.wave {
+    .point {
         display: inline-block;
         height: 1rem;
         width: 1rem;
@@ -102,26 +111,26 @@ footer {
         background-color: #383838;
         margin: 1.5rem 0;
 
-        animation: atomic-1 2s infinite;
+        animation: wave-1 2s infinite;
 
         &:nth-of-type(2) {
-            animation: atomic-2 2s infinite;
+            animation: wave-2 2s infinite;
             animation-delay: 0.15s;
         }
         &:nth-of-type(3) {
-            animation: atomic-3 2s infinite;
+            animation: wave-3 2s infinite;
             animation-delay: 0.3s;
         }
         &:nth-of-type(4) {
-            animation: atomic-4 2s infinite;
+            animation: wave-4 2s infinite;
             animation-delay: 0.45s;
         }
         &:nth-of-type(5) {
-            animation: atomic-5 2s infinite;
+            animation: wave-5 2s infinite;
             animation-delay: 0.6s;
         }
     }
-    @keyframes atomic-1 {
+    @keyframes wave-1 {
         0% {
             transform: translate(0rem, 0rem);
         }
@@ -132,7 +141,7 @@ footer {
             transform: translate(0rem, 0rem);
         }
     }
-    @keyframes atomic-2 {
+    @keyframes wave-2 {
         0% {
             transform: translate(0rem, 0rem);
         }
@@ -143,7 +152,7 @@ footer {
             transform: translate(0rem, 0rem);
         }
     }
-    @keyframes atomic-3 {
+    @keyframes wave-3 {
         0% {
             transform: translate(0rem, 0rem);
         }
@@ -154,7 +163,7 @@ footer {
             transform: translate(0rem, 0rem);
         }
     }
-    @keyframes atomic-4 {
+    @keyframes wave-4 {
         0% {
             transform: translate(0rem, 0rem);
         }
@@ -165,7 +174,7 @@ footer {
             transform: translate(0rem, 0rem);
         }
     }
-    @keyframes atomic-5 {
+    @keyframes wave-5 {
         0% {
             transform: translate(0rem, 0rem);
         }
@@ -174,6 +183,166 @@ footer {
         }
         40%, 100% {
             transform: translate(0rem, 0rem);
+        }
+    }
+}
+.molecule {
+    .atom {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 1rem;
+        background-color: #383838;
+        margin: 1.5rem 0;
+
+        animation: atomic-1 2s infinite alternate;
+
+        &:nth-of-type(2) {
+            animation: atomic-2 2s infinite alternate;
+            animation-delay: 0.15s;
+        }
+        &:nth-of-type(3) {
+            animation: atomic-3 2s infinite alternate;
+            animation-delay: 0.3s;
+        }
+        &:nth-of-type(4) {
+            animation: atomic-4 2s infinite alternate;
+            animation-delay: 0.45s;
+        }
+        &:nth-of-type(5) {
+            animation: atomic-5 2s infinite alternate;
+            animation-delay: 0.6s;
+        }
+    }
+    @keyframes atomic-1 {
+        0% {
+            transform: translate(0rem, 0rem);
+        }
+        100% {
+            transform: translate(5rem, -4rem);
+        }
+    }
+    @keyframes atomic-2 {
+        0% {
+            transform: translate(0rem, 0rem);
+        }
+        100% {
+            transform: translate(2.5rem, -4rem);
+        }
+    }
+    @keyframes atomic-3 {
+        0% {
+            transform: translate(0rem, 0rem);
+        }
+        100% {
+            transform: translate(0rem, -4rem);
+        }
+    }
+    @keyframes atomic-4 {
+        0% {
+            transform: translate(0rem, 0rem);
+        }
+        100% {
+            transform: translate(-2.5rem, -4rem);
+        }
+    }
+    @keyframes atomic-5 {
+        0% {
+            transform: translate(0rem, 0rem);
+        }
+        100% {
+            transform: translate(-5rem, -4rem);
+        }
+    }
+}
+.classic {
+    .glow-wrapper {
+        width: 5rem;
+        height: 5rem;
+        position: relative;
+        border-radius: 50%;
+        margin: auto;
+
+        animation: rotate 3s linear infinite;
+    }
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+    .glow {
+        height: 1rem;
+        width: 1rem;
+        border-radius: 1rem;
+        display: block;
+        background-color: #383838;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        opacity: 1;
+
+        animation: glow 1.5s infinite;
+
+        transform: translate(2rem);
+
+        &:nth-of-type(2) {
+            animation-delay: 0.15s;
+            transform: rotate(36deg) translate(2rem) rotate(-36deg);
+        }
+        &:nth-of-type(3) {
+            animation-delay: 0.3s;
+            transform: rotate(72deg) translate(2rem) rotate(-72deg);
+        }
+        &:nth-of-type(4) {
+            animation-delay: 0.45s;
+            transform: rotate(108deg) translate(2rem) rotate(-108deg);
+        }
+        &:nth-of-type(5) {
+            animation-delay: 0.6s;
+            transform: rotate(144deg) translate(2rem) rotate(-144deg);
+        }
+        &:nth-of-type(6) {
+            animation-delay: 0.75s;
+            transform: translate(-2rem);
+        }
+        &:nth-of-type(7) {
+            animation-delay: 0.9s;
+            transform: rotate(216deg) translate(2rem) rotate(-216deg);
+        }
+        &:nth-of-type(8) {
+            animation-delay: 1.05s;
+            transform: rotate(252deg) translate(2rem) rotate(-252deg);
+        }
+        &:nth-of-type(9) {
+            animation-delay: 1.2s;
+            transform: rotate(288deg) translate(2rem) rotate(-288deg);
+        }
+        &:nth-of-type(10) {
+            animation-delay: 1.35s;
+            transform: rotate(324deg) translate(2rem) rotate(-324deg);
+        }
+    }
+    @keyframes glow {
+        0% {
+            opacity: 1;
+            width: 1rem;
+            height: 1rem;
+            margin: 0;
+        }
+        20% {
+            opacity: .2;
+            width: .5rem;
+            height: .51rem;
+            margin: .25rem;
+        }
+        40%, 100% {
+            opacity: 1;
+            width: 1rem;
+            height: 1rem;
+            margin: 0rem;
         }
     }
 }
