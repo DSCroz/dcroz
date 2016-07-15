@@ -27,7 +27,7 @@ footer {
   margin: 2rem 8rem 8rem 8rem;
   width: 10rem;
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: top;
 }
 @media (max-width: 920px) {
   .loading {
@@ -60,6 +60,9 @@ footer {
   100% {
     transform: translateY(0);
   }
+}
+.circles {
+  margin-top: -2rem;
 }
 @media (max-width: 920px) {
   .circles {
@@ -188,69 +191,125 @@ footer {
     transform: translate(0rem, 0rem);
   }
 }
-.molecule .atom {
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
+.atom {
+  position: relative;
+  margin: 2rem 6rem 8rem 10rem;
+}
+@media (max-width: 920px) {
+  .atom {
+    margin: 2rem 2rem 8rem 6rem;
+  }
+}
+.atom .orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 6rem;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) rotateY(20deg);
+}
+.atom .orbit:nth-child(2) {
+  transform: rotateX(90deg) rotateY(40deg);
+}
+.atom .orbit:nth-child(2) .path,
+.atom .orbit:nth-child(2) .electron {
+  animation-delay: -0.2s;
+}
+.atom .orbit:nth-child(3) {
+  transform: rotateX(90deg) rotateY(60deg);
+}
+.atom .orbit:nth-child(3) .path,
+.atom .orbit:nth-child(3) .electron {
+  animation-delay: -0.4s;
+}
+.atom .orbit:nth-child(4) {
+  transform: rotateX(90deg) rotateY(80deg);
+}
+.atom .orbit:nth-child(4) .path,
+.atom .orbit:nth-child(4) .electron {
+  animation-delay: -0.6s;
+}
+.atom .orbit:nth-child(5) {
+  transform: rotateX(90deg) rotateY(100deg);
+}
+.atom .orbit:nth-child(5) .path,
+.atom .orbit:nth-child(5) .electron {
+  animation-delay: -0.8s;
+}
+.atom .orbit:nth-child(6) {
+  transform: rotateX(90deg) rotateY(120deg);
+}
+.atom .orbit:nth-child(6) .path,
+.atom .orbit:nth-child(6) .electron {
+  animation-delay: -1s;
+}
+.atom .orbit:nth-child(7) {
+  transform: rotateX(90deg) rotateY(140deg);
+}
+.atom .orbit:nth-child(7) .path,
+.atom .orbit:nth-child(7) .electron {
+  animation-delay: -1.2s;
+}
+.atom .orbit:nth-child(8) {
+  transform: rotateX(90deg) rotateY(160deg);
+}
+.atom .orbit:nth-child(8) .path,
+.atom .orbit:nth-child(8) .electron {
+  animation-delay: -1.4s;
+}
+.atom .path {
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: pathRotate 1.5s infinite linear;
+}
+.atom .electron {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  margin-left: -0.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 1rem;
-  background-color: #383838;
-  margin: 1.5rem 0;
-  animation: atomic-1 2s infinite alternate;
+  background: #383838;
+  animation: electronFix 1.5s infinite linear;
 }
-.molecule .atom:nth-of-type(2) {
-  animation: atomic-2 2s infinite alternate;
-  animation-delay: 0.15s;
+@keyframes pathRotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }
-.molecule .atom:nth-of-type(3) {
-  animation: atomic-3 2s infinite alternate;
-  animation-delay: 0.3s;
-}
-.molecule .atom:nth-of-type(4) {
-  animation: atomic-4 2s infinite alternate;
-  animation-delay: 0.45s;
-}
-.molecule .atom:nth-of-type(5) {
-  animation: atomic-5 2s infinite alternate;
-  animation-delay: 0.6s;
-}
-@keyframes atomic-1 {
+@keyframes electronFix {
   0% {
-    transform: translate(0rem, 0rem);
+    transform: rotateX(90deg) rotateY(0deg);
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  25% {
+    transform: rotateX(90deg) rotateY(-90deg);
+    width: .8rem;
+    height: .8rem;
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(-180deg);
+    width: .4rem;
+    height: .4rem;
+  }
+  75% {
+    transform: rotateX(90deg) rotateY(-270deg);
+    width: .8rem;
+    height: .8rem;
   }
   100% {
-    transform: translate(5rem, -4rem);
-  }
-}
-@keyframes atomic-2 {
-  0% {
-    transform: translate(0rem, 0rem);
-  }
-  100% {
-    transform: translate(2.5rem, -4rem);
-  }
-}
-@keyframes atomic-3 {
-  0% {
-    transform: translate(0rem, 0rem);
-  }
-  100% {
-    transform: translate(0rem, -4rem);
-  }
-}
-@keyframes atomic-4 {
-  0% {
-    transform: translate(0rem, 0rem);
-  }
-  100% {
-    transform: translate(-2.5rem, -4rem);
-  }
-}
-@keyframes atomic-5 {
-  0% {
-    transform: translate(0rem, 0rem);
-  }
-  100% {
-    transform: translate(-5rem, -4rem);
+    transform: rotateX(90deg) rotateY(-360deg);
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
 .classic .glow-wrapper {
